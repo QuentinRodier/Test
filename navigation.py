@@ -18,11 +18,8 @@ import read_aida
 import lecture_mesoNH
 import lecture_surfex
 
-import comp_obs_model
-import sondages
 
-import rejeu_mesonh
-import rejeu_surfex
+
 
 #####################################################################
 
@@ -80,6 +77,7 @@ app.layout = html.Div([
 
 today=datetime.date.today()
 yesterday=today-timedelta(days=1)
+tomorow=today+timedelta(days=1)
 end_day=today-timedelta(days=1)
 start_day=today-timedelta(days=1)
 doy1 = datetime.datetime(int(start_day.year),int(start_day.month),int(start_day.day)).strftime('%j')
@@ -95,6 +93,13 @@ doy2 = datetime.datetime(int(end_day.year),int(end_day.month),int(end_day.day)).
 #Voir programme comp_obs_model.py
 
 
+import comp_obs_model 
+
+from comp_obs_model import *
+
+
+
+
 
 
 ########################
@@ -106,6 +111,9 @@ doy2 = datetime.datetime(int(end_day.year),int(end_day.month),int(end_day.day)).
 #Voir programme sondages.py
 
 
+import sondages
+
+from sondages import *
 
 
 
@@ -118,6 +126,9 @@ doy2 = datetime.datetime(int(end_day.year),int(end_day.month),int(end_day.day)).
 
 #Voir programme rejeu_mesonh.py
 
+import rejeu_mesonh
+
+from rejeu_mesonh import *
 
 
 
@@ -129,6 +140,20 @@ doy2 = datetime.datetime(int(end_day.year),int(end_day.month),int(end_day.day)).
 ########################
     
 #voir programme rejeu_surfex
+
+import rejeu_surfex
+
+from rejeu_surfex import *
+
+
+
+
+
+
+
+
+
+
 
 ##########################################################################################
 #

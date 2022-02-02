@@ -18,11 +18,37 @@ import read_aida
 import lecture_mesoNH
 import lecture_surfex
 
-import comp_obs_model
+
+
+
+#import navigation
+
+from navigation import app
+
+from navigation import today
+from navigation import yesterday
+from navigation import tomorow
+
+from navigation import start_day
+from navigation import end_day
+
+from navigation import doy1
+from navigation import doy2
 
 
 
 
+#import comp_obs_model
+
+#from comp_obs_model import models
+
+
+
+#import rejeu_mesonh
+#from rejeu_mesonh import *
+
+#import rejeu_surfex
+#from rejeu_surfex import *
 
 ########################
 #
@@ -97,6 +123,8 @@ heures = {"00h":{
           # "num_val" est le raang de la valeur correspondant à l'heure, par exemple : puisqu'il y a une valeur tous les quarts d'heure (4 valeurs par heure), pour 9h on prend la 9x4=36ème valeur du paramètre.
 
 day=datetime.date.today()
+
+models = ["Gt", "Rt","Tf"]
 
 ############### Widgets ###############
 

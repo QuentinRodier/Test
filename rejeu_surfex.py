@@ -18,11 +18,32 @@ import read_aida
 import lecture_mesoNH
 import lecture_surfex
 
-import comp_obs_model
-import sondages
 
-import rejeu_mesonh
 
+
+import navigation
+
+from navigation import app
+
+from navigation import today
+from navigation import yesterday
+from navigation import tomorow
+
+from navigation import start_day
+from navigation import end_day
+
+from navigation import doy1
+from navigation import doy2
+
+
+#import comp_obs_model
+#from comp_obs_model import *
+
+#import sondages
+#from sondages import *
+
+#import rejeu_mesonh
+#from rejeu_mesonh import *
 
 ########################
 #

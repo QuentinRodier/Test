@@ -20,6 +20,30 @@ import lecture_surfex
 
 
 
+#import navigation
+
+from navigation import app
+
+from navigation import today
+from navigation import yesterday
+from navigation import tomorow
+
+from navigation import start_day
+from navigation import end_day
+
+from navigation import doy1
+from navigation import doy2
+
+
+#import sondages
+#from sondages import *
+
+#import rejeu_mesonh
+#from rejeu_mesonh import *
+
+#import rejeu_surfex
+#from rejeu_surfex import *
+
 
 ##############################
 #
@@ -118,7 +142,7 @@ dico_params = {
                 },
         }
 
-# Ce dictionnaire rassemble les spécificités de chaque paramètres tracés. Les 2 'index' sont les noms donnés sur AIDA au paramètre en question, dans les observations et dans les modèles. 
+#Ce dictionnaire rassemble les spécificités de chaque paramètres tracés. Les 2 'index' sont les noms donnés sur AIDA au paramètre en question, dans les observations et dans les modèles. 
 #Le 'title' est le titre du graph qui sera affiché, donc c'est l'utilisateur qui choisi, idem pour le unit, c'est à l'utilisateur de rentrer les bonnes unités.
 
 # DRIVER LECTURE DES SIMULATIONS MESONH ET SURFEX : AJOUT DE NOUVEAU RUN ICI
@@ -146,6 +170,9 @@ params = ["tmp_2m", "tmp_10m","hum_rel","vent_ff10m","flx_mvt","flx_chaleur_sens
         
 models = ["Gt", "Rt","Tf"]
 reseaux = ["J-1:00_%3600", "J-1:12_%3600", "J0:00_%3600", "J0:12_%3600"]
+
+
+
 
 
 
@@ -220,6 +247,11 @@ data, chart, graph = selection_donnees(start_day,end_day)
 data_mnh=lecture_mesoNH.mesoNH(start_day,end_day,models,params) #Pour ajouter un nouveau run de MesoNH, changer la liste models : en créer une autre
 data_surfex=lecture_surfex.surfex(start_day,end_day,models,params)
 
+
+
+
+
+
 ############### Widgets ###############
 
 calendrier = html.Div([
@@ -284,6 +316,9 @@ id_user = html.Div([
         dcc.Input(id = 'id_user4',type = 'text',placeholder = 'id de la simulation à rajouter'),
         dcc.Input(id = 'id_user5',type = 'text',placeholder = 'id de la simulation à rajouter')]) # Attention : dcc.Input != Input (voir plus bas)
 # Les dcc.Input sont des carrés où l'utilisateur peut rentrer des info : ici type = 'text' donc du texte, 
+
+
+
 
 
 
@@ -463,6 +498,9 @@ def update_line(reseau1,reseau2,reseau3,reseau4,reseau5,start_day,end_day,id_use
     
     return list_charts #Le callback attend des Outputs qui sont contenus dans chart[param]
  
+
+
+
 
                                              
 ############### Layout ###############
