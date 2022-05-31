@@ -2,6 +2,7 @@ from dash import Dash, html, dcc, Input, Output, State, callback_context
 import dash_bootstrap_components as dbc
 import plotly.express as px
 import styles as sty
+import dash_draggable
 from read_tex import KEYdoc
 
 def create_Cgrp(options, idname, defaultvalue):
@@ -181,14 +182,16 @@ col_paramn = html.Div(children=[dbc.Collapse([
             		is_open=True,
         		)],id="NAMPARAM",is_open=True)],style=sty.STYLE_NAMELIST)
 
-col_allNamelists = html.Div(children=[col_turbn,col_paramn],style=sty.STYLE_COL_NAMELISTS)
+col_allNamelists = html.Div(dash_draggable.GridLayout(children=[col_turbn,col_paramn],width=1200,height=30,style=sty.STYLE_COL_NAMELISTS))
 col_doc =  html.Div(id='container-userguide',style=sty.DOC_STYLE)
+
 
 sidebar = html.Div([
         html.H2('Namelist groups', style=sty.TEXT_STYLE),
         html.Hr(),
+        dash_draggable.GridLayout([
         html.H4('&NAM_PARAMn',style=sty.TEXT_STYLE, id='NAMPARAM-button'),
-        html.H4('&NAM_TURBn',style=sty.TEXT_STYLE, id='NAMTURB-button'),
+        html.H4('&NAM_TURBn',style=sty.TEXT_STYLE, id='NAMTURB-button')], width=70,height=45),
     ],style=sty.SIDEBAR_STYLE)
     
 LineTopStatic = html.Div([
